@@ -1,0 +1,16 @@
+[general]
+secret_key = 44444444444444444444444444444444444444444444444
+salt = 444444444
+pepper = pepper_pepper_pepper
+
+[auth]
+username = admin
+password_hashed = 4444444444444444444444444444444444444444444444444444444444444444
+
+[database]
+username = pihole
+password = xxxxxx
+host = 127.0.0.1
+port = 3306
+database_name = pihole
+

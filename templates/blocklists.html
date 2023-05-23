@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Blocklists</h2>
+<h3>Active Blocklists</h3>
+<div class="blocklists">
+   <table>
+      <tr>
+         <th>Type</th>
+         <th>URL</th>
+         <th>Action</th>
+      </tr>
+      {% for row in data %}
+      <tr>
+         <!-- Type -->
+         <td>
+            {{ row[1] }}
+         </td>
+         <!-- URL -->
+         <td>
+            {{ row[2] }}
+         </td>
+         <!-- Action -->
+         <td>
+            <form method="post" action="{{url_for('deleteBlocklist', id=row[0])}}">
+               <button type="submit" class="delete-button">DELETE</button>
+            </form>
+         </td>
+      </tr>
+      {% endfor %}
+   </table>
+</div>
+<div class="add-domains">
+   <h3>Add Blocklists</h3>
+   <form action="/blocklist/add" method="post">
+      <select name="type" class="dropdown-menu">
+         <option value="hosts">Hosts</option>
+         <option value="adblock">Adblock</option>
+      </select>
+      <input name="url" class="input-bar" type="text" placeholder="URL">
+      <input value="ADD" type="submit" class="button green-button">
+   </form>
+   <p class="example-submission">This is the following format:<br>https://example.com</p>
+</div>
+{% endblock %}

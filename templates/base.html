@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="/static/base.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{% block title %}{% endblock title %} Pihole Dashboard</title>
+
+   <!-- Roboto Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+   <!-- New Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+
+   <!-- PT Sans Font-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+   <nav>
+      <h1><a href="{{url_for('index')}}">Pihole <br> Dashboard</a></h1>
+
+      <div class="nav-links">
+         <a href="{{url_for('index')}}">Dashboard</a>
+         <br>
+         <a href="{{url_for('blocklists')}}">Blocklists</a>
+         <br>
+         <a href="{{url_for('blockedDomains')}}">Blocked Domains</a>
+         <br>
+         <a href="/power">Enable / Disable</a>
+      </div>
+   </nav>
+
+   <div class="content">
+      {% block content %}
+      
+      {% endblock %}
+      <!-- got this wave from https://getwaves.io/ -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#525681" fill-opacity="1" d="M0,288L26.7,293.3C53.3,299,107,309,160,272C213.3,235,267,149,320,149.3C373.3,149,427,235,480,234.7C533.3,235,587,149,640,122.7C693.3,96,747,128,800,165.3C853.3,203,907,245,960,266.7C1013.3,288,1067,288,1120,240C1173.3,192,1227,96,1280,48C1333.3,0,1387,0,1413,0L1440,0L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>
+   </div>
+</body>
+</html>
