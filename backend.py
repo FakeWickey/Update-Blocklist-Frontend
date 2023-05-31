@@ -109,7 +109,7 @@ def blockedDomains():
 def login():
    return render_template('login.html')
 
-# post route; formular data of the login page gets send here
+# post route; formular data of the login page gets sent here
 @app.route('/login', methods=['post'])
 def checkCredentials():
    pepper = config.get('internal', 'pepper')
